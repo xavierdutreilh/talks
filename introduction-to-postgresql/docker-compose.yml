@@ -1,0 +1,22 @@
+version: '3.3'
+services:
+  database:
+    build: .
+    environment:
+      POSTGRES_USER: everoad
+      POSTGRES_PASSWORD: everoad
+      POSTGRES_DB: everoad
+    volumes:
+      - database:/var/lib/postgresql/data
+  administration:
+    image: dpage/pgadmin4:3.2
+    environment:
+      PGADMIN_DEFAULT_EMAIL: tech@everoad
+      PGADMIN_DEFAULT_PASSWORD: everoad
+    volumes:
+      - administration:/var/lib/pgadmin
+    ports:
+      - 50080:80
+volumes:
+  database:
+  administration:
