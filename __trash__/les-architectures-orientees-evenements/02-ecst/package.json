@@ -1,0 +1,16 @@
+{
+  "name": "02-ecst",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "postinstall": "lerna bootstrap",
+    "start": "lerna run start --stream",
+    "create-tables": "lerna run create-tables --stream --no-bail"
+  },
+  "dependencies": {
+    "lerna": "^4.0.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.3.0"
+  }
+}

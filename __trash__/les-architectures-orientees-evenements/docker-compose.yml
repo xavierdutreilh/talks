@@ -1,0 +1,40 @@
+version: "3.8"
+services:
+  database:
+    image: postgres:13.2-alpine
+    environment:
+      POSTGRES_USER: mistertemp
+      POSTGRES_PASSWORD: mistertemp
+      POSTGRES_DB: mistertemp
+    volumes:
+      - database:/var/lib/postgresql/data
+      - $PWD/database:/docker-entrypoint-initdb.d:ro
+    ports:
+      - 50081:5432
+  eventbus:
+    image: rabbitmq:3.8.16-management
+    environment:
+      RABBITMQ_DEFAULT_USER: mistertemp
+      RABBITMQ_DEFAULT_PASS: mistertemp
+      RABBITMQ_DEFAULT_VHOST: mistertemp
+    volumes:
+      - eventbus:/var/lib/rabbitmq
+    ports:
+      - 50082:5672
+      - 50083:15672
+  eventstore:
+    image: eventstore/eventstore:20.10.2-bionic
+    environment:
+      EVENTSTORE_RUN_PROJECTIONS: All
+      EVENTSTORE_START_STANDARD_PROJECTIONS: "true"
+      EVENTSTORE_EXT_HTTP_PORT: 50084
+      EVENTSTORE_INSECURE: "true"
+      EVENTSTORE_ENABLE_ATOM_PUB_OVER_HTTP: "true"
+    volumes:
+      - eventstore:/var/lib/eventstore
+    ports:
+      - 50084:2113
+volumes:
+  database:
+  eventbus:
+  eventstore:

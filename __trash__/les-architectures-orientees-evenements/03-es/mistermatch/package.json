@@ -1,0 +1,24 @@
+{
+  "name": "mistermatch",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "start": "nodemon --exec keystone dev -p 50085 --app-url http://localhost:50085",
+    "create-tables": "keystone create-tables"
+  },
+  "dependencies": {
+    "@eventstore/db-client": "^1.2.1",
+    "@keystonejs/adapter-knex": "^13.3.1",
+    "@keystonejs/app-admin-ui": "^7.5.1",
+    "@keystonejs/app-graphql": "^6.3.1",
+    "@keystonejs/fields": "^22.1.2",
+    "@keystonejs/keystone": "^19.3.2",
+    "@keystonejs/list-plugins": "^8.1.1",
+    "email-validator": "^2.0.4",
+    "nodemon": "^2.0.7",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "prettier": "^2.3.0"
+  }
+}

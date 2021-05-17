@@ -1,0 +1,16 @@
+{
+  "name": "misterlog",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "start": "nodemon"
+  },
+  "dependencies": {
+    "@eventstore/db-client": "^1.2.1",
+    "nodemon": "^2.0.7",
+    "pino": "^6.11.3"
+  },
+  "devDependencies": {
+    "prettier": "^2.3.0"
+  }
+}

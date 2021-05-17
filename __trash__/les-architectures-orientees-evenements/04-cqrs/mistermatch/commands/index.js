@@ -1,0 +1,12 @@
+exports.createCandidate = require("./create-candidate");
+exports.deleteCandidate = require("./delete-candidate");
+exports.updateCandidate = require("./update-candidate");
+exports.createCompany = require("./create-company");
+exports.deleteCompany = require("./delete-company");
+exports.updateCompany = require("./update-company");
+exports.createCustomer = require("./create-customer");
+exports.deleteCustomer = require("./delete-customer");
+exports.updateCustomer = require("./update-customer");
+exports.createMission = require("./create-mission");
+exports.deleteMission = require("./delete-mission");
+exports.updateMission = require("./update-mission");
